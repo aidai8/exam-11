@@ -5,7 +5,7 @@ let client: MongoClient;
 
 const connect = async () => {
     client = await MongoClient.connect('mongodb://localhost');
-    db = client.db('hw-88');
+    db = client.db('exam-11');
 };
 
 const disconnect = async () => {

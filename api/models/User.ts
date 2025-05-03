@@ -1,5 +1,5 @@
-import mongoose, {HydratedDocument, Model} from "mongoose";
-import {UserFields} from "../types";
+import mongoose, {HydratedDocument} from "mongoose";
+import {UserDocument, UserFields} from "../types";
 import argon2 from "argon2";
 import jwt from 'jsonwebtoken';
 
@@ -17,10 +17,10 @@ const ARGON2_OPTIONS = {
 
 export const JWT_SECRET = process.env.JWT_SECRET || 'default_fallback_secret';
 
-type UserModel = Model<UserFields, {}, UserMethods>;
+type UserModel = mongoose.Model<UserDocument, {}, UserMethods>;
 
 const UserSchema = new mongoose.Schema<
-    HydratedDocument<UserFields>,
+    UserDocument,
     UserModel,
     UserMethods,
     {}
@@ -78,5 +78,5 @@ UserSchema.set("toJSON", {
     }
 })
 
-const User = mongoose.model('User', UserSchema);
+const User = mongoose.model<UserDocument, UserModel>('User', UserSchema);
 export default User;

@@ -1,11 +1,10 @@
 import {NextFunction, Request, Response} from "express";
-import {HydratedDocument} from "mongoose";
-import {UserFields} from "../types";
+import {UserDocument} from "../types";
 import User, {JWT_SECRET} from "../models/User";
 import jwt, {TokenExpiredError} from "jsonwebtoken";
 
 export interface RequestWithUser extends Request {
-    user: HydratedDocument<UserFields>;
+    user: UserDocument;
 }
 
 const auth = async (
