@@ -61,5 +61,5 @@ export interface ProductMutation {
     title: string;
     description: string;
     price: string;
-    image: File;
+    image: File | null;
 }

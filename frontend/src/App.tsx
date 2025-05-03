@@ -6,13 +6,14 @@ import Register from "./features/users/Register.tsx";
 import Login from "./features/users/Login.tsx";
 import Products from "./features/products/Products.tsx";
 import FullProduct from "./features/products/FullProducts.tsx";
-// import ProtectedRoute from "./components/UI/ProtectedRoute/ProtectedRoute.tsx";
-// import {useAppSelector} from "./app/hooks.ts";
-// import {selectUser} from "./features/users/usersSlice.ts";
+import ProtectedRoute from "./components/UI/ProtectedRoute/ProtectedRoute.tsx";
+import {useAppSelector} from "./app/hooks.ts";
+import {selectUser} from "./features/users/usersSlice.ts";
+import NewProduct from "./features/products/NewProduct.tsx";
 
 
 const App = () => {
-    // const user = useAppSelector(selectUser);
+    const user = useAppSelector(selectUser);
 
     return (
         <>
@@ -29,9 +30,9 @@ const App = () => {
                         <Route path="/login" element={<Login/>}/>
                         <Route path="/products/:id" element={<FullProduct/>}/>
 
-                        {/*<Route path="/products/new" element={*/}
-                        {/*    <ProtectedRoute isAllowed={Boolean(user)}><NewProduct/></ProtectedRoute>*/}
-                        {/*}/>*/}
+                        <Route path="/products/new" element={
+                            <ProtectedRoute isAllowed={Boolean(user)}><NewProduct/></ProtectedRoute>
+                        }/>
 
                         <Route path="*" element={<Typography variant="h4">Not found page</Typography>}/>
                     </Routes>

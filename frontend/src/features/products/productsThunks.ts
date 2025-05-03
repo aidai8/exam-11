@@ -24,15 +24,20 @@ export const fetchProductById = createAsyncThunk<Product, string>(
 
 export const createProduct = createAsyncThunk<void, ProductMutation>(
     'products/createProduct',
-    async (product) => {
+    async (productData, {getState}) => {
         const formData = new FormData();
-        Object.keys(product).forEach(key => {
-            const value = product[key as keyof ProductMutation];
-            if (value !== null && value !== undefined) {
-                formData.append(key, value as string | Blob);
+        Object.entries(productData).forEach(([key, value]) => {
+            if (value !== null) {
+                formData.append(key, value);
             }
         });
-        await axiosAPI.post('/products', formData);
+        const token = (getState() as RootState).users.user?.token;
+        await axiosAPI.post('/products', formData, {
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'multipart/form-data'
+            }
+        });
     }
 );
 
