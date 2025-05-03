@@ -14,7 +14,7 @@ interface Props {
     image: string;
 }
 
-const ProductItem: React.FC<Props> = ({title, price, category_title,  id, image}) => {
+const ProductItem: React.FC<Props> = ({title, price,  id, image}) => {
     const imageUrl = apiUrl + '/' + image;
 
     return (
@@ -28,11 +28,6 @@ const ProductItem: React.FC<Props> = ({title, price, category_title,  id, image}
                 />
                 <CardHeader title={title} />
                 <CardContent>
-                    <p>
-                        <strong>
-                            Category: {category_title}
-                        </strong>
-                    </p>
                     <p>
                         <strong>
                             Price: {price} USD

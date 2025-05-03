@@ -49,7 +49,7 @@ const Products = () => {
                     <Grid size={3}>
                         {categories.length > 0 ?
                             <ul>
-                                <li><Button variant="text" color="success" component={Link} to={`/`}>All categories</Button></li>
+                                <li><Button variant="text" color="success" component={Link} to={`/`}>All items</Button></li>
                                 {categories.map(category => (
                                     <li key={category._id}><Button variant="text" color="success" component={Link} to={`?category=${category._id}`}>{category.title}</Button></li>
                                 ))}

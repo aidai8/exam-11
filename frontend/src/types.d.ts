@@ -60,6 +60,6 @@ export interface ProductMutation {
     category: string;
     title: string;
     description: string;
-    price: number | string;
+    price: string;
     image: File;
 }

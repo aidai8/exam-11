@@ -5,6 +5,7 @@ import {ToastContainer} from "react-toastify";
 import Register from "./features/users/Register.tsx";
 import Login from "./features/users/Login.tsx";
 import Products from "./features/products/Products.tsx";
+import FullProduct from "./features/products/FullProducts.tsx";
 // import ProtectedRoute from "./components/UI/ProtectedRoute/ProtectedRoute.tsx";
 // import {useAppSelector} from "./app/hooks.ts";
 // import {selectUser} from "./features/users/usersSlice.ts";
@@ -26,7 +27,7 @@ const App = () => {
                         <Route path="/" element={<Products/>}/>
                         <Route path="/register" element={<Register/>}/>
                         <Route path="/login" element={<Login/>}/>
-                        {/*<Route path="/posts/:id" element={<FullProduct>}/>*/}
+                        <Route path="/products/:id" element={<FullProduct/>}/>
 
                         {/*<Route path="/products/new" element={*/}
                         {/*    <ProtectedRoute isAllowed={Boolean(user)}><NewProduct/></ProtectedRoute>*/}
