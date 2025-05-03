@@ -55,7 +55,7 @@ const run = async () => {
             title: "CPU",
             description: "New CPU for your best experience",
             price: 600,
-            image: "images/cpu.jpg",
+            image: "fixtures/cpu.jpeg",
             seller: john._id
         },
         {
@@ -63,7 +63,7 @@ const run = async () => {
             title: "Laptop",
             description: "Powerful laptop for work and gaming",
             price: 2500,
-            image: "images/laptop.jpg",
+            image: "fixtures/laptop.jpeg",
             seller: john._id
         },
         {
@@ -71,7 +71,7 @@ const run = async () => {
             title: "Kia K5",
             description: "Bishkek's most favourite",
             price: 10000,
-            image: "images/kia.jpg",
+            image: "fixtures/kia.jpeg",
             seller: jane._id
         },
         {
@@ -79,7 +79,7 @@ const run = async () => {
             title: "T-Shirt",
             description: "Cotton t-shirt",
             price: 10,
-            image: "images/t-shirt.jpg",
+            image: "fixtures/t-shirt.jpeg",
             seller: jane._id
         }
     );

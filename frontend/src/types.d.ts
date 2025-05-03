@@ -31,3 +31,35 @@ export interface LoginMutation {
 export interface GlobalError {
     error: string;
 }
+
+export interface Product {
+    _id: string;
+    category: {
+        _id: string;
+        title: string;
+    };
+    title: string;
+    description: string;
+    price: number;
+    image: string;
+    seller: {
+        _id: string;
+        displayName: string;
+        phoneNumber: string;
+    };
+}
+
+export interface Category {
+    _id: string;
+    title: string;
+    description: string;
+}
+
+
+export interface ProductMutation {
+    category: string;
+    title: string;
+    description: string;
+    price: number | string;
+    image: File;
+}

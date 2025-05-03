@@ -4,6 +4,8 @@ import storage from 'redux-persist/lib/storage'
 import {FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE, persistReducer, persistStore, } from "redux-persist";
 import {AxiosHeaders, InternalAxiosRequestConfig} from "axios";
 import axiosAPI from "../axiosApi.ts";
+import {productsReducer} from "../features/products/productsSlice.ts";
+import {categoriesReducer} from "../features/categories/categoriesSlice.ts";
 
 
 const usersPersistConfig = {
@@ -14,6 +16,8 @@ const usersPersistConfig = {
 
 const rootReducer = combineReducers({
     users:  persistReducer(usersPersistConfig, usersReducer),
+    products: productsReducer,
+    categories: categoriesReducer,
 });
 
 export const store = configureStore({
